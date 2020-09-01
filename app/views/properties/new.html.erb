@@ -1,0 +1,16 @@
+<div class="bg-blue-900">
+<%= render 'layouts/dashboard/nav' %>
+</div>
+<div class="h-screen w-full flex overflow-hidden select-none">
+    <%= render 'layouts/dashboard/sidenav' %>
+    	<main	class="my-1 pt-2 pb-2 px-10 flex-1 bg-gray-200 dark:bg-black rounded-l-lg
+		transition duration-500 ease-in-out overflow-y-auto">
+            <div>
+                <h1>New Property</h1>
+
+                <%= render 'form', property: @property %>
+
+                <%= link_to 'Back', properties_path, class:"bg-green-700 text-white p-2 capitalize rounded-lg"%>
+            </div>
+    	</main>
+</div>

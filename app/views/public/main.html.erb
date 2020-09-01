@@ -1,0 +1,17 @@
+<div class="bg-cover bg-center h-56"
+            style="background-image: url(https://images.unsplash.com/photo-1531877264583-a58acd888a97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);">
+    <%= render 'layouts/public/nav' %>
+    <div class="text-3xl font-semibold capitalize text-white font-times text-center py-2 pb-4">search eldoret's biggest
+        collection of rentals</div>
+    <div class="py-6 px-8 bg-white mx-48 border-solid border-2 border-gray-400">
+        <div  class= "flex justify-center w-full">
+            <div class= "px-2 border-t-4 border-b-4 border-l-4 border-gray-400 w-full text-lg", placeholder= "try a town or estate"></div>
+                    <div class= "uppercase text-white p-4 text-2xl font-semibold shadow-inner bg-teal-700">search</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <div>latest properties</div>
+    <div class="grid grid-cols-4"><%= render 'properties/latest' %></div>
+<div>
