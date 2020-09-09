@@ -1,7 +1,7 @@
 let environment = {
     plugins: [
-        require('@tailwindcss/custom-forms'),
         require('tailwindcss')('./app/javascript/stylesheets/tailwind.config.js'),
+        require('@tailwindcss/custom-forms'),
         require('postcss-import'),
         require('postcss-flexbugs-fixes'),
         require('postcss-preset-env')({
@@ -12,4 +12,4 @@ let environment = {
         })
     ]
 };
-module.exports = environment;
+export default environment;

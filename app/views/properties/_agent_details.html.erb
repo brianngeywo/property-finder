@@ -1,5 +1,8 @@
 <div class="bg-gray-200 py-4 px-6 mx-12 rounded-b-lg shadow-2xl">
-    <%= @agent.full_name %>
+    <% if @agent.profile_picture.attached? %>
+        <%= image_tag @agent.profile_picture, class:"h-56 rounded-full object-cover object-center" %>
+    <% end %>
+    <%= link_to @agent.full_name %>
     <br>
     <%= @agent.company %>
     <br>

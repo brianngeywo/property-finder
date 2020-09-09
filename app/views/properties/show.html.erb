@@ -1,22 +1,45 @@
+<div class="bg-blue-900">
+  <%= render 'layouts/public/nav' %>
+</div>
 <p id="notice"><%= notice %></p>
 <% if @property.cover_photo.attached? %>
     <%= image_tag @property.cover_photo, class:"h-48 w-full rounded-t-lg object-cover object-center" %>
 <% end %>
-<div class="flex">
+<div class="flex mx-24 justify-center">
   <div class="flex-grow">
+    <div class="flex items-center py-2 my-4 border-b-1 border-gray-500">
+      <div class="flex-grow items-center">
+        <p class="text-sm capitalize">
+          <%= @property.address %>
+        </p>
+
+        <p class="capitalize font-medium text-xl">
+          for sale
+        </p>
+      </div>
+      <div class="flex space-x-4 items-center">
+        <div class="text-center">
+          <div>rooms</div>
+          <%= @property.rooms %>
+        </div>
+        <div class="text-center">
+          <div>bathrooms</div>
+          <%= @property.bathrooms %>
+        </div>
+        <div class="text-center">
+          <div>parking</div>
+          <%= @property.parking_spaces %> 
+        </div>
+      </div>
+    </div>
     <p>
       <strong>Name:</strong>
       <%= @property.name %>
     </p>
 
     <p>
-      <strong>Address:</strong>
-      <%= @property.address %>
-    </p>
-
-    <p>
-      <strong>Price:</strong>
-      <%= @property.price %>
+      <strong>Est monthly payments of:</strong>
+      <%= number_to_currency((@property.price/360), :precision => 0) %>
     </p>
 
     <p>
@@ -24,10 +47,11 @@
       <%= @property.rooms %>
     </p>
 
-    <p>
-      <strong>Bathrooms:</strong>
-      <%= @property.bathrooms %>
-    </p>
+    <%# <div id="prop-details"> %>
+    <div>
+       <%= simple_format @property.details %>
+    </div>
+    <button class="border-2 border-green-700 p-3 capitalize my-4 rounded-lg hover:text-white hover:bg-teal-700">read more</button>
     
   </div>
   <div>
@@ -37,3 +61,5 @@
 
 <%= link_to 'Edit', edit_property_path(@property) %> |
 <%= link_to 'Back', properties_path %>
+<div class="mb-24">
+<div>

@@ -39,6 +39,17 @@
   <div class="field">
     <%= form.label :cover_photo %>
     <%= form.file_field :cover_photo %>
+    <%= form.hidden_field :cover_photo_cache %>
+  </div>
+
+  <div class="field">
+    <%= form.label :parking_spaces %>
+    <%= form.number_field :parking_spaces %>
+  </div>
+
+  <div class="field">
+    <%= form.label :details %>
+    <%= form.text_area :details %>
   </div>
 
   <div class="my-4">
